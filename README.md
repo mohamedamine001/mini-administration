@@ -3,6 +3,7 @@
 ## Built With
 * [Laravel 8 ](https://laravel.com/)
 * [Laravel Jetstream](https://jetstream.laravel.com/)
+* [Laravel Excel](https://laravel-excel.com/)
 
 
 ## Some screenshots
