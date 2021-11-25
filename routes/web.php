@@ -27,3 +27,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/clients','App\Http\Controllers\ClientController@index' )->name('clients');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/orders','App\Http\Controllers\CommandeController@index' )->name('orders');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/export-excel','App\Http\Controllers\ClientController@exportIntoExcel' )->name('excel');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/export-csv','App\Http\Controllers\ClientController@exportIntoCsv' )->name('csv');

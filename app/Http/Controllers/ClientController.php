@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 use App\Models\Client;
 use Illuminate\Http\Request;
+use App\Exports\ClientExport;
+//use Maatwebsite\Excel\Excel;
+use Excel;
 
 class ClientController extends Controller
 {
@@ -17,6 +20,15 @@ class ClientController extends Controller
         return view('clients',['data'=>$clients]);
     }
 
+    public function exportIntoExcel(){
+
+        return Excel::download(new ClientExport, 'ClientsList.xlsx');
+    }
+
+    public function exportIntoCsv(){
+
+        return Excel::download(new ClientExport, 'ClientsList.csv');
+    }
     /**
      * Show the form for creating a new resource.
      *
